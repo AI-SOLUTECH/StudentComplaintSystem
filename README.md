@@ -207,7 +207,7 @@ Repository Features
 
 ## 📞 Support
 
-For issues or questions, please check the `CHANGES_LOG.md` for detailed implementation notes.
+For issues or questions, please check the `CHANGES_LOG.md` for detailed implementation notes or contact Group 5 members.
 
 ---
 
