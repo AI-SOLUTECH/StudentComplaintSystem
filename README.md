@@ -11,12 +11,12 @@ Features
 - **System Admins**: Full user and system management
 
 Core Functionality
-- ✅ Secure user authentication with SHA-256 password hashing
-- ✅ Role-based access control
-- ✅ Department-based complaint routing
-- ✅ Real-time complaint status tracking
-- ✅ Complete user management system
-- ✅ Automatic database initialization
+- Secure user authentication with SHA-256 password hashing
+- Role-based access control
+- Department-based complaint routing
+- Real-time complaint status tracking
+- Complete user management system
+- Automatic database initialization
 
 Technical Stack
 
@@ -26,7 +26,7 @@ Technical Stack
 - **JDBC Driver**: MySQL Connector/J 8.0.31
 - **Architecture**: MVC Pattern
 
-## 📋 Prerequisites
+Prerequisites
 
 - Java JDK 8 or higher
 - MySQL Server 5.7 or higher
@@ -35,23 +35,23 @@ Technical Stack
   - Username: root
   - Password: VerNom@12
 
-## 🚀 Quick Start
+ Quick Start
 
-### 1. Clone the repository
+1. Clone the repository
 ```bash
 git clone https://github.com/YOUR_USERNAME/StudentComplaintSystem.git
 cd StudentComplaintSystem
 ```
 
-### Alternative: Download ZIP
+Alternative: Download ZIP
 - Download from GitHub and extract to your desired location
 
-### 2. Download dependencies
+ 2. Download dependencies
 ```bash
 ./download_dependencies.sh
 ```
 
-### 3. Run the application
+3. Run the application
 ```bash
 ./run.sh
 ```
@@ -61,50 +61,50 @@ Or manually:
 java -cp ".:mysql-connector-j-8.0.31/mysql-connector-j-8.0.31.jar:src" MainApp
 ```
 
-### 3. First-time setup
+3. First-time setup
 1. Click "Register" to create your first user account
 2. Choose your role (Student, Admin Officer, Department Officer, System Admin)
 3. Complete registration and login
 4. Access your role-specific dashboard
 
-## 📊 Database Schema
+Database Schema
 
 The application automatically creates the following tables:
 
-### departments
+departments
 - Default departments: IT, Academic, Finance, Administration
 
-### users
+users
 - Stores user credentials and role information
 - Links to departments for Department Officers
 
-### complaints
+complaints
 - Tracks all complaints with status and timestamps
 - Links to users and departments
 
-## 🎯 User Roles & Permissions
+User Roles & Permissions
 
-### Student
+ Student
 - Submit new complaints
 - View personal complaint history
 - Track complaint status
 
-### Admin Officer
+Admin Officer
 - View all complaints system-wide
 - Resolve, escalate, or delete complaints
 - Manage complaint workflow
 
-### Department Officer
+Department Officer
 - View complaints for assigned department
 - Resolve or escalate department complaints
 - Communicate with students
 
-### System Admin
+System Admin
 - Full user management (add, delete, update roles)
 - System-wide complaint oversight
 - Administrative controls
 
-## 🔧 Configuration
+Configuration
 
 Database connection settings are in `src/DatabaseUtil.java`:
 ```java
@@ -113,7 +113,7 @@ private static final String USER = "root";
 private static final String PASSWORD = "VerNom@12";
 ```
 
-## 🧪 Testing
+Testing
 
 Test database connection:
 ```bash
@@ -125,7 +125,7 @@ Comprehensive database test:
 java -cp ".:mysql-connector-j-8.0.31/mysql-connector-j-8.0.31.jar:src" DetailedDBTest
 ```
 
-## 📁 Project Structure
+Project Structure
 
 ```
 StudentComplaintSystem/
@@ -148,38 +148,38 @@ StudentComplaintSystem/
 └── CHANGES_LOG.md               # Detailed change history
 ```
 
-## 🐛 Troubleshooting
+Troubleshooting
 
-### Database Connection Issues
+Database Connection Issues
 1. Ensure MySQL server is running
 2. Verify database credentials in `DatabaseUtil.java`
 3. Check if database `STU` exists (auto-created if not)
 
-### Application Won't Start
+Application Won't Start
 1. Verify Java version: `java -version`
 2. Check classpath includes MySQL connector
 3. Run database connection test
 
-### GUI Issues
+GUI Issues
 1. Ensure display is available (not running headless)
 2. Check Java Swing support
 3. Verify window manager compatibility
 
-## 📝 License
+License
 
-This project is for educational purposes.
+This project is for Gimpa educational purposes.
 
-## 🐙 GitHub Repository
+ GitHub Repository
 
-### Uploading to GitHub
+Uploading to GitHub
 To push this project to your GitHub account:
 
-1. **Automated Setup** (Recommended):
+1. Automated Setup** (Recommended):
    ```bash
    ./setup_github.sh
    ```
 
-2. **Manual Setup**:
+2. Manual Setup**:
    ```bash
    git init
    git add .
@@ -188,14 +188,14 @@ To push this project to your GitHub account:
    git push -u origin main
    ```
 
-3. **Detailed Instructions**: See [GITHUB_SETUP.md](GITHUB_SETUP.md)
+3. Detailed Instructions**: See [GITHUB_SETUP.md](GITHUB_SETUP.md)
 
-### Repository Features
-- ✅ Complete source code with documentation
-- ✅ Database setup scripts included
-- ✅ Installation guides for all platforms
-- ✅ Testing utilities and examples
-- ✅ Comprehensive README and documentation
+Repository Features
+- Complete source code with documentation
+- Database setup scripts included
+- Installation guides for all platforms
+- Testing utilities and examples
+- Comprehensive README and documentation
 
 ## 🤝 Contributing
 
