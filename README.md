@@ -2,7 +2,7 @@
 
 A comprehensive Java Swing application for managing student complaints in educational institutions.
 
-## 🚀 Features
+Features
 
 ### Multi-Role System
 - **Students**: Submit and track complaints
@@ -10,7 +10,7 @@ A comprehensive Java Swing application for managing student complaints in educat
 - **Department Officers**: Handle department-specific complaints
 - **System Admins**: Full user and system management
 
-### Core Functionality
+Core Functionality
 - ✅ Secure user authentication with SHA-256 password hashing
 - ✅ Role-based access control
 - ✅ Department-based complaint routing
@@ -18,7 +18,7 @@ A comprehensive Java Swing application for managing student complaints in educat
 - ✅ Complete user management system
 - ✅ Automatic database initialization
 
-## 🛠️ Technical Stack
+Technical Stack
 
 - **Language**: Java
 - **GUI Framework**: Swing
