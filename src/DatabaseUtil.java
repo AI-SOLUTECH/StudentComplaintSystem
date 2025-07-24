@@ -62,16 +62,28 @@ public class DatabaseUtil {
                 System.err.println("Warning: Could not check/add department_id column: " + e.getMessage());
             }
             
-            // Add foreign key constraint separately (if it doesn't exist)
+            // Add foreign key constraint only if it doesn't exist
             try {
-                String addForeignKey = "ALTER TABLE users ADD CONSTRAINT fk_user_department " +
-                                     "FOREIGN KEY (department_id) REFERENCES departments(id)";
-                stmt.executeUpdate(addForeignKey);
-            } catch (SQLException e) {
-                // Foreign key might already exist, ignore this error
-                if (!e.getMessage().contains("Duplicate key name") && !e.getMessage().contains("already exists")) {
-                    System.err.println("Warning: Could not add foreign key constraint: " + e.getMessage());
+                // Check if the foreign key constraint already exists
+                String checkConstraint = "SELECT COUNT(*) FROM information_schema.KEY_COLUMN_USAGE " +
+                                        "WHERE CONSTRAINT_NAME = 'fk_user_department' " +
+                                        "AND TABLE_SCHEMA = DATABASE() " +
+                                        "AND TABLE_NAME = 'users'";
+                ResultSet constraintRs = stmt.executeQuery(checkConstraint);
+                
+                boolean constraintExists = false;
+                if (constraintRs.next() && constraintRs.getInt(1) > 0) {
+                    constraintExists = true;
                 }
+                
+                if (!constraintExists) {
+                    String addForeignKey = "ALTER TABLE users ADD CONSTRAINT fk_user_department " +
+                                         "FOREIGN KEY (department_id) REFERENCES departments(id)";
+                    stmt.executeUpdate(addForeignKey);
+                    System.out.println("Added foreign key constraint fk_user_department");
+                }
+            } catch (SQLException e) {
+                System.err.println("Warning: Could not add foreign key constraint: " + e.getMessage());
             }
 
             // Create complaints table if it does not exist
